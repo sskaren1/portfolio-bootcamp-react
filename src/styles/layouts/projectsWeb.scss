@@ -1,0 +1,117 @@
+@import '../base/variables.scss';
+@import '../base/colours.scss';
+@import '../base/mixins.scss';
+
+// Web Projects
+.card--web{
+  max-width: 35rem;
+  width: 70%;
+  margin: 0 auto $margin_elemt;
+  background-image: linear-gradient(
+    to top,
+    $gradient-2 0%,
+    $gradient-3 35%,
+    $neutral-2 60%,
+    $neutral-2 100%
+  );
+
+  @include tablet {
+    width: 70rem;
+    max-width: 80rem;
+    padding: $padding_elemt 0;
+    background-image: linear-gradient(
+      to left,
+      $gradient-1 0%,
+      $gradient-3 50%,
+      $neutral-2 70%,
+      $neutral-2 100%
+    );
+  }
+
+  .card__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      grid-row: unset;
+      @include grid-columns(2, $gap-2);
+    }
+  }
+}
+
+.card__img {
+  width: auto;
+  height: auto;
+  img {
+    border-radius: 1rem;
+    vertical-align: middle;
+  }
+}
+
+.card__features {
+  padding: calc($padding_elemt * 2) $padding_elemt;
+  @include tablet {
+    padding: 0;
+  }
+
+  .card__title {
+    h3 {
+      margin-bottom: $margin_elemt;
+      &:hover {
+        color: $link-hover;
+      }
+    }
+  }
+
+  .card__span {
+    text-align: center;
+    margin-bottom: $margin_elemt;
+    @include tablet {
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+    .card__year {
+      background-color: $btn-blue;
+      padding: 0.4rem 1rem;
+      color: $link;
+      border-radius: 0.6rem;
+      margin-right: calc($margin_elemt/2);
+    }
+    
+    .card__tools {
+      color: rgb(46, 46, 46);
+      line-height: 2.5rem;
+    }
+  }
+
+  .card__description {
+    text-align: center;
+    line-height: 2rem;
+    margin-bottom: calc($margin_elemt*2);
+    @include tablet {
+      text-align: left;
+    }
+  }
+  .card__link{
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+hr {
+  height: 0.1rem;
+  background-color: $line;
+  border: 0.1rem solid $line;
+  margin: $margin_elemt 0;
+
+  @include tablet {
+    margin: $margin_elemt 0;
+  }
+}
+
+.oculto{
+  display: none;
+}

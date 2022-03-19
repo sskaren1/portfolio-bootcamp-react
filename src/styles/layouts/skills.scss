@@ -1,0 +1,55 @@
+@import '../base/variables.scss';
+@import '../base/colours.scss';
+@import '../base/mixins.scss';
+
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: calc($margin_elemt * 3) 0 calc($margin_elemt * 4);
+  h2 {
+    margin-bottom: calc($margin_elemt * 3);
+  }
+}
+
+.skills {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.skill__icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $skill-bg;
+  border: none;
+  border-radius: 1.5rem;
+  width: 10rem;
+  margin: 0 $margin_elemt calc($margin_elemt*2);
+  padding: $padding_elemt;
+
+  @include tablet{
+    width: 13rem;
+  }
+
+  &:hover {
+    background-color: $skill-hover;
+  }
+
+  svg {
+    font-size: 4rem;
+    color: $neutral-2;
+    margin-bottom: 2rem;
+    @include tablet{
+      font-size: 6rem;
+    }
+  }
+
+  h4 {
+    color: $neutral-2;
+  }
+}

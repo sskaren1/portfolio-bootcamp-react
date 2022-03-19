@@ -1,0 +1,37 @@
+@import '../base/variables.scss';
+@import '../base/colours.scss';
+@import '../base/mixins.scss';
+
+.header{
+    background: $gradient-1;
+    height: auto;
+    overflow: hidden;
+    
+    &.fijo {
+        background: $header-bg;
+        width: 100%;
+        position: fixed;//mantenga fijo       
+        z-index: 1;//esté por encima de todos los elementos
+        top: 0;//que esté arriba
+        .nav--float{
+            background-color: rgba($color: $header-bg, $alpha: 0.95);
+        }
+        @include tablet {
+            background: $header-bg;
+        }
+    }
+
+    @include tablet {
+        background: linear-gradient(
+            to left,
+            $gradient-1 0%,
+            $gradient-2 30%,
+            $gradient-3 60%,
+            $gradient-4 100%
+        );
+    }
+}
+
+.header__container{
+    padding: calc($padding_div/2) 0;
+}

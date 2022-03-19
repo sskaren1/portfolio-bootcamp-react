@@ -1,0 +1,63 @@
+@import '../base/variables.scss';
+@import '../base/colours.scss';
+@import '../base/mixins.scss';
+
+.banner {
+  height: 90vh;
+  background: linear-gradient(
+      to bottom,
+      $gradient-1 0%,
+      $gradient-2 30%,
+      $gradient-4 60%,
+      $gradient-4 100%
+    ),
+    url(../../assets/image/javascript_illustration.svg);
+  background-repeat: no-repeat;
+  background-position: center 80%;
+  background-size: contain;
+  @include tablet {
+    height: 90vh;
+    background: linear-gradient(
+        to left,
+        $gradient-1 0%,
+        $gradient-2 30%,
+        $gradient-3 60%,
+        $gradient-4 100%
+      ),
+      url(../../assets/image/javascript_illustration.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+  }
+  .banner__container {
+    @include grid-rows(2, $gap-2);
+    height: 100%;
+    @include tablet {
+      grid-row: unset;
+      @include grid-columns(2, $gap-2);
+    }
+  }
+}
+.banner__description {
+  grid-row: 1/2;
+  @include tablet {
+    grid-row: unset;
+    grid-column: 2/3;
+  }
+  h1 {
+    margin-bottom: $margin_elemt;
+    @include tablet {
+      text-align: left;
+    }
+  }
+
+  p {
+    text-align: center;
+    color: $paragraph;
+    @include tablet {
+      text-align: left;
+    }
+  }
+}
+
+

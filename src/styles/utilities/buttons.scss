@@ -1,0 +1,9 @@
+@import '../base/colours.scss';
+@import '../base/mixins.scss';
+
+.button{
+    @include button(transparent, block);                   
+}
+.button--view{
+    @include button($btn-view, inline-block);   
+}
